@@ -1,0 +1,15 @@
+parameters:
+    aygon_tiny_mce.form_type.tinymce.class: Aygon\TinyMCEBundle\Form\Type\TinyMCEType
+    aygon_tiny_mce.twig_extension.tinymce.class: Aygon\TinyMCEBundle\Twig\Extension\TinyMCEExtension
+services:
+    aygon_tiny_mce.form_type.tinymce:
+        class: %aygon_tiny_mce.form_type.tinymce.class%
+        arguments: [%aygon_tiny_mce.config%]
+        tags:
+            - { name: form.type, alias: tinymce }
+            
+    aygon_tiny_mce.twig_extension.tinymce:
+        class: %aygon_tiny_mce.twig_extension.tinymce.class%
+        arguments: [%aygon_tiny_mce.script_url%]
+        tags:
+            - { name: twig.extension }

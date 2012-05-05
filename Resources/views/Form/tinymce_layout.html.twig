@@ -1,0 +1,9 @@
+{% block tinymce_widget %}
+{% spaceless %}
+    <script type="text/javascript">
+    $(document).ready(function() { $('#{{ id }}').tinymce({{ configs|json_encode|raw }}); });
+    </script>
+    {% set required = false %}
+    {{ block("textarea_widget") }}
+{% endspaceless %}
+{% endblock tinymce_widget %}
